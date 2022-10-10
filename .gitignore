@@ -2,6 +2,7 @@ HELP.md
 .gradle
 build/
 driver/
+.idea
 
 
 ### STS ###
