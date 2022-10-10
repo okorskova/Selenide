@@ -9,6 +9,8 @@ import java.time.format.DateTimeFormatter;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
+import static org.openqa.selenium.Keys.HOME;
+import static org.openqa.selenium.Keys.SHIFT;
 
 
 public class CardDelivery {
@@ -25,7 +27,7 @@ public class CardDelivery {
     void shouldTestValidForm() {
         String date = generateDate(3);
         $("[data-test-id=city] input").setValue("Москва");
-        $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
+        $("[data-test-id=date] input").sendKeys(Keys.chord(SHIFT, HOME), Keys.BACK_SPACE);
         $("[data-test-id=date] input").setValue(date);
         $("[data-test-id=name] input").setValue("Иванов Петр");
         $("[data-test-id=phone] input").setValue("+79998888888");
